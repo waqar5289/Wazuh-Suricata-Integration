@@ -17,7 +17,7 @@ We install Suricata on Ubuntu, load the Emerging Threats open ruleset, configure
 ---
 
 ## Lab Architecture
-buntu Server (Suricata)
+Ubuntu Server (Suricata)
 │
 │ Suricata alerts (eve.json)
 ▼
@@ -42,25 +42,25 @@ Install Ubuntu Live Server and access it via SSH (PuTTY).
 ```bash
 sudo add-apt-repository ppa:oisf/suricata-stable
 3. Update the system
-Bashsudo apt-get update
+sudo apt-get update
 
 4. Install Suricata
-Bashsudo apt-get install suricata -y
+sudo apt-get install suricata -y
 
 5. Download Emerging Threats Ruleset
-Bashcd /tmp/ && curl -LO https://rules.emergingthreats.net/open/suricata-6.0.8/emerging.rules.tar.gz
+cd /tmp/ && curl -LO https://rules.emergingthreats.net/open/suricata-6.0.8/emerging.rules.tar.gz
 
 6. Extract the rules
-Bashsudo tar -xvzf emerging.rules.tar.gz
+sudo tar -xvzf emerging.rules.tar.gz
 
 7. Create rules directory
-Bashsudo mkdir /etc/suricata/rules
+sudo mkdir /etc/suricata/rules
 
 8. Move rules into Suricata directory
-Bashsudo mv rules/*.rules /etc/suricata/rules/
+sudo mv rules/*.rules /etc/suricata/rules/
 
 9. Set proper permissions
-Bashsudo chmod 640 /etc/suricata/rules/*.rules
+sudo chmod 640 /etc/suricata/rules/*.rules
 
 10. Configure Suricata (/etc/suricata/suricata.yaml)
 
@@ -75,7 +75,7 @@ rule-files:
 
 
 11. Restart Suricata
-Bashsudo systemctl restart suricata
+sudo systemctl restart suricata
 
 12. Configure Wazuh Agent (/var/ossec/etc/ossec.conf)
 Add the following localfile configuration:
@@ -85,7 +85,7 @@ XML<localfile>
 </localfile>
 
 13. Restart Wazuh Agent
-Bashsudo systemctl restart wazuh-agent
+sudo systemctl restart wazuh-agent
 
 14. Generate traffic and verify alerts
 Ping or generate network traffic. You should now see Suricata alerts on the Wazuh Dashboard.
@@ -102,7 +102,7 @@ End-to-end IDS + SIEM integration
 
 Project Files
 
-Full Lab PDF [blocked] (original document)
+Full Lab PDF 
 All screenshots are available in the Evidence/ folder
 
 
